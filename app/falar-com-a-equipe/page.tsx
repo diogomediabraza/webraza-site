@@ -27,33 +27,33 @@ export default function ContactPage() {
                   <span className="text-brand-orange">EQUIPA</span>
                 </h1>
                 <p className="font-body text-white/50 text-lg leading-relaxed mb-10 max-w-md">
-                  Conta-nos o teu projecto. Respondemos em menos de 24 horas com uma análise honesta do que podemos fazer pela tua marca.
+                  Conta-nos o teu projecto. Respondemos em menos de 24 horas com uma anÃ¡lise honesta do que podemos fazer pela tua marca.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-brand-orange/20 border border-brand-orange/30 flex items-center justify-center">
-                      <span className="text-brand-orange text-xs">✓</span>
+                      <span className="text-brand-orange text-xs">âœ“</span>
                     </div>
                     <p className="font-body text-white/60 text-sm">Resposta em menos de 24 horas</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-brand-orange/20 border border-brand-orange/30 flex items-center justify-center">
-                      <span className="text-brand-orange text-xs">✓</span>
+                      <span className="text-brand-orange text-xs">âœ“</span>
                     </div>
-                    <p className="font-body text-white/60 text-sm">1ª call de diagnóstico gratuita</p>
+                    <p className="font-body text-white/60 text-sm">1Âª call de diagnÃ³stico gratuita</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-brand-orange/20 border border-brand-orange/30 flex items-center justify-center">
-                      <span className="text-brand-orange text-xs">✓</span>
+                      <span className="text-brand-orange text-xs">âœ“</span>
                     </div>
-                    <p className="font-body text-white/60 text-sm">Sem compromisso, sem pressão</p>
+                    <p className="font-body text-white/60 text-sm">Sem compromisso, sem pressÃ£o</p>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
-                  <h3 className="font-display text-white text-2xl mb-6">CONTACTM�DIRTCO</h3>
+                  <h3 className="font-display text-white text-2xl mb-6">CONTACTM€DIRTCO</h3>
                   <div className="space-y-4">
                     <a href="mailto:hello@mediabraza.com" className="flex items-center gap-3 group">
                       <div className="w-10 h-10 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange font-mono text-xs">@</div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                <button onClick={() => setModalOpen(true)} className="w-full bg-brand-orange text-white font-body font-medium py-5 rounded-2xl hover:bg-brand-orange-light transition-colors text-base">Abrir formulário →</button>
+                <button onClick={() => setModalOpen(true)} className="w-full bg-brand-orange text-white font-body font-medium py-5 rounded-2xl hover:bg-brand-orange-light transition-colors text-base">Abrir formulÃ¡rio â†’</button>
               </div>
             </div>
           </div>
