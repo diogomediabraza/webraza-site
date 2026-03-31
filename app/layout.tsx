@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter_Tight, Bebas_Neue, Geist_Mono } from 'next/font/google'
+import { Inter_Tight, Bebas_Neue, Space_Mono } from 'next/font/google'
 import './globals.css'
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
@@ -18,8 +18,9 @@ const bebasNeue = Bebas_Neue({
   display: 'swap',
 })
 
-// Geist Mono from Vercel
-const geistMono = Geist_Mono({
+// Monospace font
+const geistMono = Space_Mono({
+  weight: ['400','700'],
   subsets: ['latin'],
   variable: '--font-geist-mono',
   display: 'swap',
