@@ -19,7 +19,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
     resize(); window.addEventListener('resize', resize)
     const draw = () => {
       t += 0.005; const w = canvas.width, h = canvas.height
-      const gx = w*(0.65+Math.sin(t*0.7)*0.08), gy = h*'(0.75+Math.cos(t*0.5)*0.08)
+      const gx = w*(0.65+Math.sin(t*0.7)*0.08), gy = h*(0.75+Math.cos(t*0.5)*0.08)
       const radius = Math.max(w,h)*(0.8+Math.sin(t)*0.1)
       const grad = ctx.createRadialGradient(gx,gy,0,gx,gy,radius)
       grad.addColorStop(0,`rgba(255,88,0,0.35)`); grad.addColorStop(0.3,'rgba(180,40,0,0.15)'); grad.addColorStop(1,'rgba(0,0,0,0)')
