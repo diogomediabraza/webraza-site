@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-bebas: 'Bebas Neue', Impact, sans-serif;
+  --font-inter-tight: 'Inter Tight', Inter, sans-serif;
+  --font-geist-mono: 'Geist Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+body { background: #000; color: #fff; font-family: var(--font-inter-tight); overflow-x: hidden; }
+
+::selection { background: #FF5800; color: #fff; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #FF5800; border-radius: 2px; }
+
+.scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+.font-display { font-family: var(--font-bebas); font-weight: 400; letter-spacing: 0.02em; }
+
+.pin-spacer { pointer-events: none; }
+
+.text-brand-orange { color: #FF5800; }
