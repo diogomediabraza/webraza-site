@@ -5,50 +5,50 @@ import { useRef, useEffect, useState } from 'react'
 const servicesData = [
   {
     number: 'NO.01',
-    name: 'Tráfego Pago',
-    tagline: 'Mais alcance. Menos desperdício. Campanhas que pagam por si mesmas.',
-    description: 'Meta Ads, Google Ads e TikTok Ads geridos com estratégia de performance real. Cada euro investido tem destino definido e resultado mensurável.',
+    name: 'TrÃ¡fego Pago',
+    tagline: 'Mais alcance. Menos desperdÃ­cio. Campanhas que pagam por si mesmas.',
+    description: 'Meta Ads, Google Ads e TikTok Ads geridos com estratÃ©gia de performance real. Cada euro investido tem destino definido e resultado mensurÃ¡vel.',
     tags: ['Meta Ads', 'Google Ads', 'TikTok Ads', 'LinkedIn Ads', 'Retargeting'],
-    stat: { value: '4.8x', label: 'ROI médio das campanhas' },
+    stat: { value: '4.8x', label: 'ROI mÃ©dio das campanhas' },
   },
   {
     number: 'NO.02',
     name: 'Influencer Marketing',
-    tagline: '50+ criadores. Europa inteira. Audiências reais, não métricas de vaidade.',
-    description: 'A rede Braza Conecta cobre Portugal, Espanha, Alemanha e Brasil. Matchmaking estratégico entre marca e criador para campanhas que convertem.',
+    tagline: '50+ criadores. Europa inteira. AudiÃªncias reais, nÃ£o mÃ©tricas de vaidade.',
+    description: 'A rede Braza Conecta cobre Portugal, Espanha, Alemanha e Brasil. Matchmaking estratÃ©gico entre marca e criador para campanhas que convertem.',
     tags: ['Braza Conecta', 'Micro-creators', 'Macro-creators', 'UGC', 'Branded Content'],
     stat: { value: '50+', label: 'Criadores activados' },
   },
   {
     number: 'NO.03',
-    name: 'Gestão de Redes Sociais',
-    tagline: 'Presença consistente. Conteúdo com propósito. Comunidade que cresce.',
-    description: 'Estratégia editorial, produção de conteúdo, gestão de comunidade e relatórios mensais de performance para Instagram, TikTok e LinkedIn.',
+    name: 'GestÃ£o de Redes Sociais',
+    tagline: 'PresenÃ§a consistente. ConteÃºdo com propÃ³sito. Comunidade que cresce.',
+    description: 'EstratÃ©gia editorial, produÃ§Ã£o de conteÃºdo, gestÃ£o de comunidade e relatÃ³rios mensais de performance para Instagram, TikTok e LinkedIn.',
     tags: ['Instagram', 'TikTok', 'LinkedIn', 'Editorial', 'Community Management'],
-    stat: { value: '98%', label: 'Retenção de clientes' },
+    stat: { value: '98%', label: 'RetenÃ§Ã£o de clientes' },
   },
   {
     number: 'NO.04',
-    name: 'Produção de Conteúdo',
-    tagline: 'Do conceito ao entregável. Vídeo, foto e copy que fazem a marca mover.',
-    description: 'Equipa criativa completa: direção de arte, redação, gravação e edição. Produção de conteúdo para redes sociais, campanhas e brand content.',
-    tags: ['Vídeo', 'Fotografia', 'Copywriting', 'Motion', 'Brand Content'],
-    stat: { value: '200+', label: 'Peças produzidas/mês' },
+    name: 'ProduÃ§Ã£o de ConteÃºdo',
+    tagline: 'Do conceito ao entregÃ¡vel. VÃ­deo, foto e copy que fazem a marca mover.',
+    description: 'Equipa criativa completa: direÃ§Ã£o de arte, redaÃ§Ã£o, gravaÃ§Ã£o e ediÃ§Ã£o. ProduÃ§Ã£o de conteÃºdo para redes sociais, campanhas e brand content.',
+    tags: ['VÃ­deo', 'Fotografia', 'Copywriting', 'Motion', 'Brand Content'],
+    stat: { value: '200+', label: 'PeÃ§as produzidas/mÃªs' },
   },
   {
     number: 'NO.05',
     name: 'Branding & Identidade',
-    tagline: 'Marcas que não se esquecem. Identidade que abre portas antes de falar.',
-    description: 'Naming, identidade visual, tom de voz e brand guidelines. Construção de marca do zero ou reposicionamento estratégico.',
+    tagline: 'Marcas que nÃ£o se esquecem. Identidade que abre portas antes de falar.',
+    description: 'Naming, identidade visual, tom de voz e brand guidelines. ConstruÃ§Ã£o de marca do zero ou reposicionamento estratÃ©gico.',
     tags: ['Naming', 'Visual Identity', 'Brand Guidelines', 'Tom de Voz', 'Rebranding'],
     stat: { value: '100%', label: 'Projectos entregues no prazo' },
   },
   {
     number: 'NO.06',
-    name: 'Consultoria Estratégica',
-    tagline: 'Clareza antes da execução. Estratégia que alinha marketing com negócio.',
-    description: 'Diagnóstico de presença digital, plano de 90 dias, análise de concorrência e definição de KPIs. Para marcas que querem crescer com direção.',
-    tags: ['Diagnóstico', 'Plano 90 dias', 'OKRs', 'Análise Concorrência', 'KPIs'],
+    name: 'Consultoria EstratÃ©gica',
+    tagline: 'Clareza antes da execuÃ§Ã£o. EstratÃ©gia que alinha marketing com negÃ³cio.',
+    description: 'DiagnÃ³stico de presenÃ§a digital, plano de 90 dias, anÃ¡lise de concorrÃªncia e definiÃ§Ã£o de KPIs. Para marcas que querem crescer com direÃ§Ã£o.',
+    tags: ['DiagnÃ³stico', 'Plano 90 dias', 'OKRs', 'AnÃ¡lise ConcorrÃªncia', 'KPIs'],
     stat: { value: '90', label: 'Dias para primeiros resultados' },
   },
 ]
@@ -88,7 +88,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6">
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-black/30 mb-4">O que fazemos</p>
           <h2 className="font-display text-black" style={{ fontSize: 'clamp(48px, 8vw, 120px)' }}>
-            SERVIÇOS
+            SERVIÃOS
           </h2>
         </div>
       </div>
@@ -177,7 +177,7 @@ export default function Services() {
                     href="/servicos"
                     className="inline-flex items-center gap-2 bg-brand-orange text-white font-body font-medium px-6 py-3 rounded-full hover:bw-brand-orange-light transition-colors text-sm"
                   >
-                    Saber mais →
+                    Saber mais â
                   </a>
                 </div>
               </div>
@@ -185,6 +185,6 @@ export default function Services() {
           </div>
         </section>
       ))}
-    </div
+    </div>
   )
 }
