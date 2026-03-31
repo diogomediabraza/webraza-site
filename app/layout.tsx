@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter_Tight } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Inter_Tight, Bebas_Neue, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
@@ -12,19 +11,18 @@ const interTight = Inter_Tight({
 })
 
 // Bebas Neue via Google Fonts
-const bebasNeue = localFont({
-  src: '../public/fonts/BebasNeue-Regular.ttf',
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
   variable: '--font-bebas',
   display: 'swap',
-  fallback: ['Impact', 'Arial Narrow', 'sans-serif'],
 })
 
 // Geist Mono from Vercel
-const geistMono = localFont({
-  src: '../public/fonts/GeistMono-Regular.woff2',
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
   variable: '--font-geist-mono',
   display: 'swap',
-  fallback: ['Courier New', 'monospace'],
 })
 
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
