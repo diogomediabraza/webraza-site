@@ -6,9 +6,6 @@ const nextConfig = {
       { protocol: 'https', hostname: 'res.cloudinary.com' },
     ],
   },
-  experimental: {
-    optimizeCss: true,
-  },
 }
 
 module.exports = nextConfig
