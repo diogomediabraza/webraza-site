@@ -75,21 +75,21 @@ export default function Services() {
   return (
     <div ref={sectionRef} id="servicos">
 
-      <div className="bg-white py-16 border-b border-black/5" data-theme="light">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-black/30 mb-4">O ecossistema</p>
-          <h2 className="font-display text-black" style={{ fontSize: 'clamp(48px, 8vw, 120px)' }}>
+      <div className="bg-white py-10 sm:py-16 border-b border-black/5" data-theme="light">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6">
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-black/30 mb-3 sm:mb-4">O ecossistema</p>
+          <h2 className="font-display text-black" style={{ fontSize: 'clamp(40px, 8vw, 120px)' }}>
             OPERAÇÕES
           </h2>
         </div>
       </div>
 
-      <div className="sticky top-24 z-20 bg-white/90 backdrop-blur border-b border-black/5 py-3" data-theme="light">
-        <div className="max-w-7xl mx-auto px-6 flex items-center gap-2 overflow-x-auto scrollbar-none">
+      <div className="sticky top-14 sm:top-24 z-20 bg-white/90 backdrop-blur border-b border-black/5 py-2.5 sm:py-3" data-theme="light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-none">
           {operationsData.map((s, i) => (
             <button
               key={s.number}
-              className={`font-mono text-[10px] uppercase tracking-[0.12em] px-3 py-1.5 rounded-full transition-colors whitespace-nowrap ${
+              className={`font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.12em] px-2.5 sm:px-3 py-1.5 rounded-full transition-colors whitespace-nowrap min-h-[36px] ${
                 activeIndex === i ? 'bg-brand-orange text-white' : 'text-black/30 hover:text-black/60'
               }`}
               onClick={() => {
@@ -105,33 +105,33 @@ export default function Services() {
       {operationsData.map((op, i) => (
         <section
           key={op.number}
-          className="service-slide bg-white border-b border-black/5 py-24"
+          className="service-slide bg-white border-b border-black/5 py-14 sm:py-24"
           data-theme="light"
         >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-start">
 
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand-orange mb-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand-orange mb-3 sm:mb-4">
                   {op.number}
                 </p>
                 <h3
-                  className="font-display text-black mb-6"
-                  style={{ fontSize: 'clamp(40px, 6vw, 80px)' }}
+                  className="font-display text-black mb-4 sm:mb-6"
+                  style={{ fontSize: 'clamp(32px, 6vw, 80px)' }}
                 >
                   {op.name.toUpperCase()}
                 </h3>
-                <p className="font-body text-black/80 text-xl font-light leading-snug mb-6">
+                <p className="font-body text-black/80 text-lg sm:text-xl font-light leading-snug mb-4 sm:mb-6">
                   {op.tagline}
                 </p>
-                <p className="font-body text-black/50 text-base leading-relaxed mb-8">
+                <p className="font-body text-black/50 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
                   {op.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {op.tags.map(tag => (
                     <span
                       key={tag}
-                      className="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 bg-black/5 rounded-full text-black/50"
+                      className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.1em] px-2.5 sm:px-3 py-1.5 bg-black/5 rounded-full text-black/50"
                     >
                       {tag}
                     </span>
@@ -140,13 +140,13 @@ export default function Services() {
               </div>
 
               <div className="lg:pt-16">
-                <div className="bg-black rounded-3xl p-10 mb-8">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 mb-4">
+                <div className="bg-black rounded-2xl sm:rounded-3xl p-6 sm:p-10 mb-6 sm:mb-8">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 mb-3 sm:mb-4">
                     {op.stat.label}
                   </p>
                   <span
                     className="font-display text-white"
-                    style={{ fontSize: 'clamp(60px, 10vw, 120px)' }}
+                    style={{ fontSize: 'clamp(48px, 10vw, 120px)' }}
                   >
                     {op.stat.value}
                   </span>
@@ -154,13 +154,13 @@ export default function Services() {
                 <div className="flex items-center justify-between">
                   <span
                     className="font-display text-black/5"
-                    style={{ fontSize: 'clamp(80px, 15vw, 180px)' }}
+                    style={{ fontSize: 'clamp(60px, 15vw, 180px)' }}
                   >
                     {(i + 1).toString().padStart(2, '0')}
                   </span>
                   <a
                     href="/servicos"
-                    className="inline-flex items-center gap-2 bg-brand-orange text-white font-body font-medium px-6 py-3 rounded-full hover:bg-brand-orange-light transition-colors text-sm"
+                    className="inline-flex items-center gap-2 bg-brand-orange text-white font-body font-medium px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:bg-brand-orange-light transition-colors text-sm min-h-[44px]"
                   >
                     Saber mais →
                   </a>
