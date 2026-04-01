@@ -6,6 +6,9 @@ interface HeroProps {
   onOpenModal?: () => void
 }
 
+// ── CONFIG: Replace with your showreel video URL ──
+const SHOWREEL_URL = '' // e.g. '/videos/showreel.mp4'
+
 export default function Hero({ onOpenModal }: HeroProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -31,7 +34,28 @@ export default function Hero({ onOpenModal }: HeroProps) {
 
   return (
     <section id="hero" data-theme="dark" className="relative min-h-screen bg-black flex flex-col justify-end pb-10 sm:pb-16 pt-28 sm:pt-32 overflow-hidden">
+
+      {/* ── Video Background (showreel loop) ── */}
+      {SHOWREEL_URL ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/hero-poster.jpg"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          aria-hidden
+        >
+          <source src={SHOWREEL_URL} type="video/mp4" />
+        </video>
+      ) : null}
+
+      {/* ── Animated gradient overlay (always present) ── */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden={true}/>
+
+      {/* ── Dark overlay for text legibility ── */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30 pointer-events-none" aria-hidden />
+
       <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-6">
         <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40 mb-6 sm:mb-8">Ecossistema criativo e estratégico — Est. 2020</p>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 sm:gap-8">
