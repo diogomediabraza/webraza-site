@@ -7,11 +7,7 @@ interface CTAProps {
 export default function CTA({ onOpenModal }: CTAProps) {
   return (
     <section id="cta" data-theme="dark" className="bg-black py-28 relative overflow-hidden">
-      {/* Background decorative text */}
-      <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden>
         <span
           className="font-display text-white/[0.025] uppercase leading-none text-center"
           style={{ fontSize: 'clamp(100px, 22vw, 320px)' }}
@@ -24,6 +20,7 @@ export default function CTA({ onOpenModal }: CTAProps) {
         <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/30 mb-8">
           Próximo passo
         </p>
+
         <h2
           className="font-display text-white mb-8 leading-none"
           style={{ fontSize: 'clamp(56px, 10vw, 140px)' }}
@@ -31,8 +28,9 @@ export default function CTA({ onOpenModal }: CTAProps) {
           PRONTO PARA<br />
           <span className="text-brand-orange">CRESCER?</span>
         </h2>
+
         <p className="font-body text-white/50 text-lg font-light leading-relaxed mb-12 max-w-xl mx-auto">
-          Conta-nos o teu projecto. Respondemos em menos de 24 horas com uma análise honesta do que podemos fazer pela tua marca.
+          Conta-nos o teu projecto. Respondemos em menos de 24 horas com uma análise honesta de como o ecossistema WeBraza pode ajudar a tua marca a crescer.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -43,14 +41,13 @@ export default function CTA({ onOpenModal }: CTAProps) {
             Iniciar projecto →
           </button>
           <a
-            href="mailto:hello@mediabraza.com"
+            href="mailto:hello@webraza.com"
             className="font-body text-white/50 hover:text-white transition-colors text-sm"
           >
             ou envia um email →
           </a>
         </div>
 
-        {/* Trust signals */}
         <div className="mt-16 pt-12 border-t border-white/10 grid grid-cols-3 gap-8">
           {[
             { label: 'Resposta em', value: '< 24h' },
