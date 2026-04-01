@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { label: 'Início', href: '/' },
   { label: 'Sobre', href: '/sobre' },
-  { label: 'Serviços', href: '/servicos' },
+  { label: 'Operações', href: '/servicos' },
   { label: 'Cases', href: '/cases' },
   { label: 'Insights', href: '/insights' },
 ]
@@ -26,8 +26,6 @@ export default function Header({ onOpenModal }: HeaderProps) {
     const handleScroll = () => {
       const scrollY = window.scrollY
       setScrolled(scrollY > 40)
-
-      // Detect background color at header center to switch logo variant
       const sections = document.querySelectorAll('[data-theme]')
       let currentTheme = 'dark'
       sections.forEach((section) => {
@@ -38,7 +36,6 @@ export default function Header({ onOpenModal }: HeaderProps) {
       })
       setIsDark(currentTheme === 'dark')
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -50,28 +47,21 @@ export default function Header({ onOpenModal }: HeaderProps) {
         className={`
           fixed top-5 left-1/2 -translate-x-1/2 z-50
           flex items-center justify-between
-          w-[calc(100%-40px)] max-w-[920px]
-          px-5 py-3
-          rounded-[35px]
+          w-[calc(100%-40px)] max-w-[920px] px-5 py-3 rounded-[35px]
           transition-all duration-300
-          ${scrolled
-            ? 'bg-black/60 backdrop-blur-[16px] shadow-lg shadow-black/20'
-            : 'bg-transparent'
-          }
+          ${scrolled ? 'bg-black/60 backdrop-blur-[16px] shadow-lg shadow-black/20' : 'bg-transparent'}
         `}
       >
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <span
             className={`font-display text-2xl tracking-wide transition-colors duration-300 ${
               isDark ? 'text-white' : 'text-black'
             }`}
           >
-            MEDIA<span className="text-brand-orange">BRAZA</span>
+            WE<span className="text-brand-orange">BRAZA</span>
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link
@@ -86,7 +76,6 @@ export default function Header({ onOpenModal }: HeaderProps) {
           ))}
         </nav>
 
-        {/* CTA Button */}
         <button
           onClick={onOpenModal}
           className="hidden md:flex items-center gap-2 bg-brand-orange text-white font-body text-sm font-medium px-5 py-2.5 rounded-full hover:bg-brand-orange-light transition-colors duration-200"
@@ -94,7 +83,6 @@ export default function Header({ onOpenModal }: HeaderProps) {
           Falar com a equipa
         </button>
 
-        {/* Mobile hamburger */}
         <button
           className={`md:hidden p-2 transition-colors ${isDark ? 'text-white' : 'text-black'}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -104,7 +92,6 @@ export default function Header({ onOpenModal }: HeaderProps) {
         </button>
       </header>
 
-      {/* Mobile menu overlay */}
       <div
         className={`
           fixed inset-0 z-40 bg-black flex flex-col items-center justify-center
