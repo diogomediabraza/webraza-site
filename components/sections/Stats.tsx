@@ -62,23 +62,23 @@ export default function Stats() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="numeros" data-theme="light" className="bg-white py-28">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section ref={sectionRef} id="numeros" data-theme="light" className="bg-white py-16 sm:py-28">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {statsData.map(({ value, suffix, label, sublabel }) => (
             <div key={label} className="group">
-              <div className="mb-4 pb-4 border-b border-black/10">
+              <div className="mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-black/10">
                 <span
                   className="font-display text-black leading-none"
-                  style={{ fontSize: 'clamp(56px, 8vw, 96px)' }}
+                  style={{ fontSize: 'clamp(40px, 8vw, 96px)' }}
                 >
                   <CountUp target={value} suffix={suffix} active={active} />
                 </span>
               </div>
-              <p className="font-body text-black/80 font-medium text-base leading-snug mb-2">
+              <p className="font-body text-black/80 font-medium text-sm sm:text-base leading-snug mb-1 sm:mb-2">
                 {label}
               </p>
-              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-black/30">
+              <p className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.12em] text-black/30">
                 {sublabel}
               </p>
             </div>
