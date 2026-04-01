@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter_Tight, Bebas_Neue, Space_Mono } from 'next/font/google'
 import './globals.css'
 
-// ─── Fonts ────────────────────────────────────────────────────────────────────
 const interTight = Inter_Tight({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
@@ -10,7 +9,6 @@ const interTight = Inter_Tight({
   display: 'swap',
 })
 
-// Bebas Neue via Google Fonts
 const bebasNeue = Bebas_Neue({
   weight: '400',
   subsets: ['latin'],
@@ -18,7 +16,6 @@ const bebasNeue = Bebas_Neue({
   display: 'swap',
 })
 
-// Monospace font
 const geistMono = Space_Mono({
   weight: ['400','700'],
   subsets: ['latin'],
@@ -26,46 +23,46 @@ const geistMono = Space_Mono({
   display: 'swap',
 })
 
-// ─── SEO Metadata ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   title: {
-    default: 'Media Braza — Agência de Marketing Digital no Porto',
-    template: '%s | Media Braza',
+    default: 'WeBraza — Um ecossistema criativo e estratégico',
+    template: '%s | WeBraza',
   },
-  description:
-    'Agência de marketing digital baseada no Porto. Tráfego pago, influencer marketing, gestão de redes sociais e produção de conteúdo para marcas que querem crescer na Europa.',
+  description: 'WeBraza é um grupo criativo e estratégico com cinco operações integradas: branding, performance, influência, produção e conteúdo. Baseado no Porto.',
   keywords: [
-    'agência marketing digital porto',
+    'webraza',
+    'grupo criativo portugal',
+    'branding porto',
     'marketing digital portugal',
     'influencer marketing europa',
-    'gestão redes sociais porto',
-    'tráfego pago portugal',
-    'media braza',
+    'ecossistema criativo',
+    'mediabraza',
+    'wedigitalbranding',
+    'braza connecta',
   ],
-  authors: [{ name: 'Media Braza' }],
-  creator: 'Media Braza',
-  publisher: 'Media Braza',
+  authors: [{ name: 'WeBraza' }],
+  creator: 'WeBraza',
+  publisher: 'WeBraza',
   openGraph: {
     type: 'website',
     locale: 'pt_PT',
-    url: 'https://mediabraza.com',
-    siteName: 'Media Braza',
-    title: 'Media Braza — Agência de Marketing Digital no Porto',
-    description:
-      'Tráfego pago, influencer marketing e gestão de redes sociais para marcas que querem crescer na Europa.',
+    url: 'https://webraza.com',
+    siteName: 'WeBraza',
+    title: 'WeBraza — Um ecossistema criativo e estratégico',
+    description: 'Cinco operações integradas: branding, performance, influência, produção e conteúdo. Baseado no Porto.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Media Braza',
+        alt: 'WeBraza',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Media Braza — Agência de Marketing Digital no Porto',
-    description: 'Marcas que dominam o digital. Baseados no Porto.',
+    title: 'WeBraza — Um ecossistema criativo e estratégico',
+    description: 'Não é agência. É estrutura. Cinco operações integradas.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -84,7 +81,7 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://mediabraza.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://webraza.com'),
 }
 
 export default function RootLayout({
@@ -93,12 +90,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="pt"
-      className={`${interTight.variable} ${bebasNeue.variable} ${geistMono.variable}`}
-    >
+    <html lang="pt" className={`${interTight.variable} ${bebasNeue.variable} ${geistMono.variable}`}>
       <head>
-        {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <script
