@@ -40,21 +40,31 @@ export default function Header({ onOpenModal }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
   return (
     <>
       <header
         ref={headerRef}
         className={`
-          fixed top-5 left-1/2 -translate-x-1/2 z-50
+          fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50
           flex items-center justify-between
-          w-[calc(100%-40px)] max-w-[920px] px-5 py-3 rounded-[35px]
+          w-[calc(100%-24px)] sm:w-[calc(100%-40px)] max-w-[920px] px-4 sm:px-5 py-2.5 sm:py-3 rounded-[35px]
           transition-all duration-300
           ${scrolled ? 'bg-black/60 backdrop-blur-[16px] shadow-lg shadow-black/20' : 'bg-transparent'}
         `}
       >
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <span
-            className={`font-display text-2xl tracking-wide transition-colors duration-300 ${
+            className={`font-display text-xl sm:text-2xl tracking-wide transition-colors duration-300 ${
               isDark ? 'text-white' : 'text-black'
             }`}
           >
@@ -78,17 +88,17 @@ export default function Header({ onOpenModal }: HeaderProps) {
 
         <button
           onClick={onOpenModal}
-          className="hidden md:flex items-center gap-2 bg-brand-orange text-white font-body text-sm font-medium px-5 py-2.5 rounded-full hover:bg-brand-orange-light transition-colors duration-200"
+          className="hidden md:flex items-center gap-2 bg-brand-orange text-white font-body text-sm font-medium px-5 py-2.5 rounded-full hover:bg-brand-orange-light transition-colors duration-200 min-h-[44px]"
         >
           Falar com a equipa
         </button>
 
         <button
-          className={`md:hidden p-2 transition-colors ${isDark ? 'text-white' : 'text-black'}`}
+          className={`md:hidden p-2.5 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center ${isDark ? 'text-white' : 'text-black'}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </header>
 
@@ -99,20 +109,20 @@ export default function Header({ onOpenModal }: HeaderProps) {
           ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
         `}
       >
-        <nav className="flex flex-col items-center gap-8">
+        <nav className="flex flex-col items-center gap-6 sm:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="font-display text-5xl text-white hover:text-brand-orange transition-colors"
+              className="font-display text-4xl sm:text-5xl text-white hover:text-brand-orange transition-colors"
             >
               {link.label.toUpperCase()}
             </Link>
           ))}
           <button
             onClick={() => { setMenuOpen(false); onOpenModal?.() }}
-            className="mt-4 bg-brand-orange text-white font-body font-medium px-8 py-4 rounded-full text-lg hover:bg-brand-orange-light transition-colors"
+            className="mt-4 bg-brand-orange text-white font-body font-medium px-8 py-4 rounded-full text-lg hover:bg-brand-orange-light transition-colors min-h-[48px]"
           >
             Falar com a equipa
           </button>
