@@ -10,6 +10,8 @@ const operationsData = [
     description: 'Posicionamento, narrativa, tom de voz e presença estratégica. A MediaBraza trabalha o que determina como uma marca é lembrada, diferenciada e escolhida — antes mesmo de abrir a boca.',
     tags: ['Posicionamento', 'Narrativa de Marca', 'Tom de Voz', 'Linha Editorial', 'Brand Strategy'],
     stat: { value: '16+', label: 'Marcas posicionadas' },
+    image: '', // e.g. '/images/ops/mediabraza.jpg'
+    color: 'from-orange-600/20',
   },
   {
     number: 'NO.02',
@@ -18,6 +20,8 @@ const operationsData = [
     description: 'Mídia paga, performance e aceleração comercial orientada por dados. A WeDigitalBranding transforma digital em resultado real de negócio — com a clareza de quem sabe a diferença entre vaidade de métricas e tração.',
     tags: ['Meta Ads', 'Google Ads', 'TikTok Ads', 'Performance', 'Aceleração Comercial'],
     stat: { value: '4.8x', label: 'ROI médio das campanhas' },
+    image: '', // e.g. '/images/ops/wedigital.jpg'
+    color: 'from-blue-600/20',
   },
   {
     number: 'NO.03',
@@ -26,6 +30,8 @@ const operationsData = [
     description: 'Conecta marcas e creators com estratégia, organização e inteligência de operação. A Braza Connecta conta com plataforma própria de ativação e mensuração — para que nenhuma campanha de influência fique sem rastreio.',
     tags: ['Influencer Marketing', 'Curadoria de Creators', 'Plataforma Própria', 'UGC', 'Branded Content'],
     stat: { value: '50+', label: 'Criadores na rede' },
+    image: '', // e.g. '/images/ops/connecta.jpg'
+    color: 'from-purple-600/20',
   },
   {
     number: 'NO.04',
@@ -34,6 +40,8 @@ const operationsData = [
     description: 'Produtora independente que integra o ecossistema WeBraza. Captação, edição, campanhas e conteúdo visual de alta qualidade — para o grupo, para agências e para projectos independentes.',
     tags: ['Audiovisual', 'Captação', 'Edição', 'Campanhas em Vídeo', 'Brand Content'],
     stat: { value: '200+', label: 'Peças produzidas/mês' },
+    image: '', // e.g. '/images/ops/braphic.jpg'
+    color: 'from-red-600/20',
   },
   {
     number: 'NO.05',
@@ -42,8 +50,19 @@ const operationsData = [
     description: 'O podcast do grupo. Uma plataforma de conteúdo, autoridade e relacionamento — com conversas sobre empreendedorismo, mercado, lifestyle e os bastidores de quem está a construir marcas de verdade.',
     tags: ['Podcast', 'Conteúdo Editorial', 'Autoridade', 'Empreendedorismo', 'Lifestyle'],
     stat: { value: '100%', label: 'Consistência editorial' },
+    image: '', // e.g. '/images/ops/embraca.jpg'
+    color: 'from-amber-600/20',
   },
 ]
+
+// ── Placeholder icons per operation (used when no image provided) ──
+const operationIcons: Record<string, JSX.Element> = {
+  'NO.01': <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white/20"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>,
+  'NO.02': <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white/20"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
+  'NO.03': <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white/20"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+  'NO.04': <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white/20"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>,
+  'NO.05': <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white/20"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>,
+}
 
 export default function Services() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -139,8 +158,27 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="lg:pt-16">
-                <div className="bg-black rounded-2xl sm:rounded-3xl p-6 sm:p-10 mb-6 sm:mb-8">
+              <div className="lg:pt-16 space-y-6 sm:space-y-8">
+
+                {/* ── Operation Visual ── */}
+                <div className={`relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${op.color} to-black`}>
+                  {op.image ? (
+                    <img
+                      src={op.image}
+                      alt={`${op.name} — ${op.tagline}`}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center">
+                      {operationIcons[op.number]}
+                      <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/15 mt-4">Imagem da operação</p>
+                      <p className="font-mono text-[8px] text-white/10 mt-1">800 × 600 px recomendado</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* ── Stat Card ── */}
+                <div className="bg-black rounded-2xl sm:rounded-3xl p-6 sm:p-10">
                   <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 mb-3 sm:mb-4">
                     {op.stat.label}
                   </p>
@@ -151,6 +189,7 @@ export default function Services() {
                     {op.stat.value}
                   </span>
                 </div>
+
                 <div className="flex items-center justify-between">
                   <span
                     className="font-display text-black/5"
